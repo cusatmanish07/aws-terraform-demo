@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -x
+#set -x
 
 if [ $# -ne 1 ]; then
     echo "Usage ./$0 create or delete"

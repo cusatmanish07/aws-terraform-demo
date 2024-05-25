@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -x
+#set -x
 
 if [ $# -ne 1 ]; then
     echo "Usage ./$0 create or delete"
@@ -40,8 +40,8 @@ createDynamoDB(){
     table_name=$1
     region=$2
     aws dynamodb create-table --table-name ${table_name} \
-    --attribute-definitions AttributeName=LockId,AttributeType=S \
-    --key-schema AttributeName=LockId,KeyType=HASH \
+    --attribute-definitions AttributeName=LockID,AttributeType=S \
+    --key-schema AttributeName=LockID,KeyType=HASH \
     --provisioned-throughput ReadCapacityUnits=5,WriteCapacityUnits=5 \
     --table-class STANDARD \
     --region ${region}
