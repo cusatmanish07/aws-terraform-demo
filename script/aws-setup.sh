@@ -59,8 +59,8 @@ action=$1
 
 if [ "$action" == "create" ]; then
     # Create s3 bucket
-    createBucket "dev-tfstate-manish1" "us-west-1"
-    createBucket "prod-tfstate-manish1" "us-west-2"
+    createBucket "dev-tfstate-manish" "us-west-1"
+    createBucket "prod-tfstate-manish" "us-west-2"
 
     # Create DynamoDB Table
     createDynamoDB dev-tfstate-manish us-west-1
@@ -68,7 +68,7 @@ if [ "$action" == "create" ]; then
 
 elif [ "$action" == "delete" ]; then
     # Cleanup all the artifact in s3 buckets before bucket deletion
-    s3_bucket_list="dev-tfstate-manish1 prod-tfstate-manish1"
+    s3_bucket_list="dev-tfstate-manish prod-tfstate-manish"
     dynamodDB_list="dev-tfstate-manish:us-west-1 prod-tfstate-manish:us-west-2"
 
     for i in $s3_bucket_list 
